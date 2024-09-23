@@ -19,6 +19,8 @@ const connectDB = async()=>{
 }
 connectDB();
 
+app.post("/plants",postPlants)
+
 
 const PORT = process.env.PORT || 5000;
 
