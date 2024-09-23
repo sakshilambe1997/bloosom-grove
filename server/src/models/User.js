@@ -13,8 +13,22 @@ const userSchema = new Schema({
 
     password:{
         type:string,
-        
-    }
+        unique:true
+    },
 
+    address:{
+        type:string,
+        required:true
+    },
 
+    gender:{
+        type:string,
+        enum:["male","female"],
+        default:"male"
+    },
+},{
+    timestamps:true
 })
+
+const User = model("User",userSchema)
+export default User;
